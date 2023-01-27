@@ -31,6 +31,10 @@ class PostsController < ApplicationController
 
     if @post_form.valid?
       @post_form.update(post_form_params, @post)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
